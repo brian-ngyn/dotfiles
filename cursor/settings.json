@@ -1,167 +1,97 @@
 {
-  // Start of vim settings
   "vim.leader": "<space>",
   "vim.surround": true,
   "vim.camelCaseMotion.enable": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "<C-h>"
-      ], // navigate between buffers
-      "commands": [
-        "workbench.action.navigateLeft"
-      ],
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"],
       "silent": true
     },
     {
-      "before": [
-        "<C-l>"
-      ], // navigate between buffers
-      "commands": [
-        "workbench.action.navigateRight"
-      ],
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"],
       "silent": true
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<Leader>",
-        "h"
-      ], // highlight off
-      "commands": [
-        ":nohl"
-      ]
+      "before": ["<Leader>", "h"],
+      "commands": [":nohl"]
     },
     {
-      "before": [
-        "<leader>",
-        "/"
-      ], // comment line
-      "after": [
-        "g",
-        "c",
-        "c"
-      ]
+      "before": ["<leader>", "/"],
+      "after": ["g", "c", "c"]
     },
     {
-      "before": [
-        "<leader>",
-        "l",
-        "f"
-      ], // format document
-      "commands": [
-        "editor.action.formatDocument"
-      ]
+      "before": ["<leader>", "l", "f"],
+      "commands": ["editor.action.formatDocument"]
     },
     {
-      "before": [
-        "g",
-        "l"
-      ], // hover error
-      "commands": [
-        "editor.action.showHover"
-      ],
+      "before": ["g", "l"],
+      "commands": ["editor.action.showHover"],
       "silent": true
     },
     {
-      "before": [
-        "<C-h>"
-      ], // navigate between buffers
-      "commands": [
-        "workbench.action.navigateLeft"
-      ],
-      "when": "explorerViewletVisible && filesExplorerFocus",
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"],
+      // "when": "explorerViewletVisible && filesExplorerFocus",
       "silent": true
     },
     {
-      "before": [
-        "<C-l>"
-      ], // navigate between buffers
-      "commands": [
-        "workbench.action.navigateRight"
-      ],
-      "when": "explorerViewletVisible && filesExplorerFocus",
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"],
+      // "when": "explorerViewletVisible && filesExplorerFocus",
       "silent": true
     },
     {
-      "before": [
-        "<leader>",
-        "r",
-        "n"
-      ], // rename variable
-      "commands": [
-        "editor.action.rename"
-      ],
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"],
       "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly",
       "silent": true
     },
     {
-      "before": [
-        "<C-y>"
-      ],
-      "commands": [
-        "editor.gotoNextFold"
-      ],
+      "before": ["<C-y>"],
+      "commands": ["editor.gotoNextFold"],
       "silent": true
     },
     {
-      "before": [
-        "<C-o>"
-      ],
-      "commands": [
-        "editor.gotoPreviousFold"
-      ],
+      "before": ["<C-o>"],
+      "commands": ["editor.gotoPreviousFold"],
+      "silent": true
+    },
+    {
+      "before": ["g", "b"],
+      "commands": ["workbench.action.navigateBack"],
       "silent": true
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<leader>",
-        "/"
-      ], // comment line
-      "after": [
-        "g",
-        "c"
-      ]
+      "before": ["<leader>", "/"],
+      "after": ["g", "c"]
     },
     {
-      "before": [
-        "<M-j>"
-      ], // move lines
-      "commands": [
-        "editor.action.moveLinesDownAction"
-      ]
+      "before": ["<M-j>"],
+      "commands": ["editor.action.moveLinesDownAction"]
     },
     {
-      "before": [
-        "K"
-      ], // move lines
-      "commands": [
-        "editor.action.moveLinesUpAction"
-      ]
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
     },
     {
-      "before": [
-        "tab"
-      ], // tab line
-      "commands": [
-        "editor.action.indentLines"
-      ],
+      "before": ["tab"],
+      "commands": ["editor.action.indentLines"],
       "when": "editorTextFocus && !editorReadonly"
     },
     {
-      "before": [
-        "shift+tab"
-      ], // out tab line
-      "commands": [
-        "editor.action.outdentLines"
-      ],
+      "before": ["shift+tab"],
+      "commands": ["editor.action.outdentLines"],
       "when": "editorTextFocus && !editorReadonly"
     }
   ],
@@ -169,14 +99,12 @@
     "<C-a>": false,
     "<C-f>": false
   },
-  // End of vim settings
-
-  "prettier.requireConfig": true,
+  "prettier.requireConfig": false,
   "editor.accessibilitySupport": "off",
   "git.openRepositoryInParentFolders": "always",
   "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "material-icon-theme",
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "FiraCode Nerd Font Propa",
   "editor.fontSize": 12.2,
   "editor.fontLigatures": true,
   "security.workspace.trust.untrustedFiles": "open",
@@ -273,5 +201,28 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prisma.showPrismaDataPlatformNotification": false,
-  "remote.SSH.connectTimeout": 300
+  "remote.SSH.connectTimeout": 300,
+  "prettier.trailingComma": "all",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.fontLigatures.enabled": true,
+  "editor.fontVariations": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "[graphql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.css": "css"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.scrollback": 10000,
+  "workbench.sideBar.location": "right",
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
+  "cursor.composer.usageSummaryDisplay": "always",
+  "cursor.composer.queueMessageDefaultBehavior": "queue",
+  "cursor.cpp.enablePartialAccepts": true,
+  "cursor.general.disableHttp2": true
 }

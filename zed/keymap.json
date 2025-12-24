@@ -1,0 +1,88 @@
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // vim commands
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "tab": "editor::Tab",
+      "shift-s": "vim::PushAddSurrounds",
+      "shift-tab": "editor::Backtab",
+      "space /": "editor::ToggleComments",
+      "p": ["vim::Paste", { "preserve_clipboard": true }],
+      "cmd-v": ["vim::Paste", { "preserve_clipboard": true }]
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds",
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "space /": "editor::ToggleComments",
+      "space l f": "editor::Format",
+      "g l": "editor::Hover",
+      "g b": "pane::GoBack",
+      "g f": "pane::GoForward",
+      "g a": "editor::ShowCompletions",
+      "space m v": "markdown::OpenPreviewToTheSide",
+      "space r n": "editor::Rename"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "l": "project_panel::Open",
+      "v": "project_panel::OpenSplitVertical",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneLeft",
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete"
+    }
+  },
+  {
+    "context": "Workspace || ProjectPanel",
+    "bindings": {
+      "cmd-b": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor || AgentPanel",
+    "bindings": {
+      "cmd-l": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "tab": "editor::ContextMenuNext",
+      "shift-tab": "editor::ContextMenuPrevious"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "alt-enter": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-alt-n": "workspace::AddFolderToProject"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "space v g": "editor::OpenExcerptsSplit"
+    }
+  }
+]
